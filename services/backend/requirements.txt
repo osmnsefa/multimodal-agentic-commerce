@@ -1,0 +1,20 @@
+--extra-index-url https://download.pytorch.org/whl/cpu
+
+fastapi
+uvicorn[standard]
+pydantic>=2.0
+pydantic-settings
+sqlalchemy>=2.0
+greenlet
+asyncpg
+psycopg2-binary
+pgvector
+alembic
+redis
+celery
+torch
+sentence-transformers
+pillow
+pytest
+pytest-asyncio
+httpx

@@ -1,0 +1,176 @@
+# ==============================================================================
+# AegisCommerce Monorepo .gitignore
+# Stack: Python (FastAPI, Celery), Docker, Next.js (Web), React Native (Mobile)
+# ==============================================================================
+
+# ------------------------------------------------------------------------------
+# 1. Critical Security & Environment Variables
+# ------------------------------------------------------------------------------
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env.*.local
+*.env
+
+# Never ignore environment template file
+!.env.example
+
+# Certificates & Private Keys
+*.pem
+*.key
+*.crt
+*.p12
+*.pfx
+*.asc
+*.keystore
+id_rsa
+id_rsa.pub
+
+# Credentials & Tokens
+credentials.json
+secrets.json
+service_account.json
+
+# ------------------------------------------------------------------------------
+# 2. Python & Backend (FastAPI, Celery, Alembic, PyTest)
+# ------------------------------------------------------------------------------
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Virtual Environments
+venv/
+.venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# Testing & Coverage
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+.hypothesis/
+.tox/
+.nox/
+nosetests.xml
+coverage.xml
+
+# Distribution & Build artifacts
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Celery & Task Queues
+celerybeat-schedule
+celerybeat.pid
+*.pid
+
+# ------------------------------------------------------------------------------
+# 3. Docker, Databases & Logs
+# ------------------------------------------------------------------------------
+# Database files & Dumps
+*.db
+*.sqlite
+*.sqlite3
+*.sql
+*.dump
+
+# Log files
+*.log
+logs/
+*.log.*
+docker/*.log
+
+# Docker Local Volume mounts data
+.docker-data/
+postgres_data/
+redis_data/
+qdrant_data/
+
+# ------------------------------------------------------------------------------
+# 4. Frontend (Next.js) & Node.js
+# ------------------------------------------------------------------------------
+node_modules/
+.next/
+out/
+.npm/
+.yarn/
+yarn-debug.log*
+yarn-error.log*
+npm-debug.log*
+pnpm-debug.log*
+.pnpm-debug.log*
+
+# Next.js build output cache
+.vercel/
+*.tsbuildinfo
+
+# ------------------------------------------------------------------------------
+# 5. Mobile (React Native / Expo)
+# ------------------------------------------------------------------------------
+.expo/
+.expo-shared/
+web-build/
+
+# Android build outputs
+android/app/build/
+android/.gradle/
+android/app/debug/
+android/app/release/
+*.apk
+*.aab
+
+# iOS build outputs
+ios/build/
+ios/Pods/
+ios/DerivedData/
+*.ipa
+*.app
+*.xcarchive
+
+# ------------------------------------------------------------------------------
+# 6. IDE, Editors & Operating System
+# ------------------------------------------------------------------------------
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+
+# IDE Settings
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.idea/
+*.swp
+*.swo
+*.sublime-project
+*.sublime-workspace
