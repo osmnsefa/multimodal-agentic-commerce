@@ -52,6 +52,8 @@ services:
       - PROJECT_NAME=AegisCommerce Backend
       - DATABASE_URL=postgresql+asyncpg://aegis_user:aegis_password@postgres:5432/aegis_db
       - REDIS_URL=redis://redis:6379/0
+      - CELERY_BROKER_URL=redis://redis:6379/1
+      - CELERY_RESULT_BACKEND=redis://redis:6379/2
     volumes:
       - ../services/backend:/app
     depends_on:

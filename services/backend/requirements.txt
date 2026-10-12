@@ -12,9 +12,13 @@ pgvector
 alembic
 redis
 celery
-torch
-sentence-transformers
+python-multipart
 pillow
+numpy
+langgraph
+langchain-core
 pytest
 pytest-asyncio
 httpx
+sentence-transformers
+torch

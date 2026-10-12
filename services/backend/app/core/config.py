@@ -30,9 +30,11 @@ class Settings(BaseSettings):
         if not self.REDIS_URL:
             self.REDIS_URL = f"redis://{self.REDIS_HOST}:{self.REDIS_PORT}/0"
         if not self.CELERY_BROKER_URL:
-            self.CELERY_BROKER_URL = f"redis://{self.REDIS_HOST}:{self.REDIS_PORT}/1"
+            base = self.REDIS_URL.rsplit("/", 1)[0]
+            self.CELERY_BROKER_URL = f"{base}/1"
         if not self.CELERY_RESULT_BACKEND:
-            self.CELERY_RESULT_BACKEND = f"redis://{self.REDIS_HOST}:{self.REDIS_PORT}/2"
+            base = self.REDIS_URL.rsplit("/", 1)[0]
+            self.CELERY_RESULT_BACKEND = f"{base}/2"
 
     @property
     def celery_broker_url(self) -> str:
